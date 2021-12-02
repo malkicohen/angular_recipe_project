@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    direction: rtl;
+   /* background-image: url('assets/אוכל3.png');
+   background-repeat: no-repeat;
+   width: 750px;
+   background-size:cover; */
+
+
+}
+#all{
+    height: 100%;
+    width: 100%;
+    /* background-color: rgba(0,0,0,0.5); */
+}

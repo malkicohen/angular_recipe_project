@@ -1,0 +1,40 @@
+ <div id="alla">
+ <div id="nk"><div> <span class="sp">חיפוש מתכון לפי שם</span>
+    <input type="text" placeholder="חיפוש לפי שם מתכון" [(ngModel)]="search" (blur)="sinun()"></div>  
+       <div>  <span class="sp">חיפוש לפי משך זמן הכנה</span> 
+          <input type="text" placeholder="חיפוש לפי משך הכנה" [(ngModel)]="time" (blur)="sinun()">
+                 </div> <div>
+                   <span class="sp">חיפוש לפי קטגוריה</span><select  placeholder="חיפוש לפי קטגוריה"  [(ngModel)]="Category" (blur)="sinun()" >
+        <option *ngFor="let x of myCategory" >{{x}}</option></select>
+                 </div>
+      </div> 
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="./main.js"></script>
+  <div class="d-flex justify-content-around bg-secondary mb-3"  id="set" >
+  <div *ngFor="let x of recipeFilter" class="recipe"  (click)="details(x)" >
+  <div class="mobile-container">
+    <header>
+      <input type="text" id="search-term" />
+      <button id="search"><i class="fas fa-search"></i></button>
+    </header>
+    <div class="fav-container">
+      <h3>{{x.RecipeName}}</h3>
+      <ul class="fav-meals" id="fav-meals"><li></li></ul>
+    </div><img src="assets/{{x.Picture}}" alt="image"/><span>זמן הכנה:{{x.PrepartionTime|time}}</span>
+    <div>
+      <label class="level1" >דרגת קושי:{{x.Level}}</label>
+    <div class="meals" id="meals"></div>
+    <span ></span>
+    <input type="button"  (click)="edit(x)" value="edit">
+  </div>
+  <div class="popup-container hidden" id="meal-popup">
+    <div class="popup">
+      <button id="close-popup" class="close-popup">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="meal-info" id="meal-info"></div>
+    </div>
+  </div>
+</div>
+ </div> <input type="button" (click)="add()" value="addRecipe"></div>
+

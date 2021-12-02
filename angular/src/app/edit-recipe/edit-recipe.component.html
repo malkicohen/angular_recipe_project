@@ -1,0 +1,24 @@
+
+<div id="border" style="background-color: rgba(0, 0, 0, 0.746);">
+   <h2>עריכת מתכון</h2>
+   <div id=right>
+<div><span>שם המתכון</span><input type="text"  name="RecipeName" [(ngModel)]='myRecipe.RecipeName'></div>
+   <div> <span>זמן הכנה </span><input type="number" [(ngModel)]='myRecipe.PrepartionTime' name="PrepartionTime" > 
+     
+ </div>
+   <div><span>רמה</span><input type="text" max="3" [(ngModel)]=myRecipe.Level name="Level">
+</div>
+   <div><span>תאריך</span><input type="date" [(ngModel)]='myRecipe.AddDate' name="AddDate">
+</div>
+   <div><span>קוד משתמש</span><input type="text" [(ngModel)]='myRecipe.UserCode' name="UserCode"></div>
+   <div><input type="file" [(ngModel)]='myRecipe.Picture' name="Picture" (change)="see()"></div>
+   <img src="assets/{{myRecipe.Picture}}" alt="image" id="recipeEdited"/>   </div>
+   <span>רכיבים</span>
+<div *ngFor="let c of myRecipe.StringList,let i=index; trackBy:funcindex"><input type="text" [(ngModel)]="myRecipe.StringList[i]" name="{{i}}" ></div>
+<span>הוראות הכנה</span>
+<div *ngFor="let r of myRecipe.Prepartion,let j=index; trackBy:funcindex"><input type="text" [(ngModel)]="myRecipe.Prepartion[j]" name="{{j}}"></div>
+<div><input type="button" value="שמור שינויים" (click)="saveChanges()">
+   <input type="button" value="בטל" (click)="cancel()">
+</div>
+
+   </div>

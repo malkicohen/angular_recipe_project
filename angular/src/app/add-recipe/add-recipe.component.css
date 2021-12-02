@@ -1,0 +1,48 @@
+body{
+    text-align: center;
+   
+    background-color: rgb(110, 40, 40);
+    text-align: center;
+    
+}
+img{
+    width: 500px;
+    height: 250px;
+   
+}
+h2{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+input[button]{
+    background-color:white;
+}
+input{
+ border-bottom: inherit rgb(214, 214, 236) 3px ;
+ background-color:unset;
+ border-top: hidden;
+ border-left: hidden;
+ border-right: hidden; 
+ color:white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20pt;
+    
+}
+
+#border{
+    height: 500px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+   margin-right: 25%;
+   text-align: center;
+  
+   box-shadow: 0 10px 25px rgba(11, 121, 131, 0.692);
+
+}
+#right{
+float:right;}
+span{
+   direction: rtl;
+}

@@ -1,0 +1,21 @@
+<div id="border" style="background-color: rgb(0, 0, 0);">
+   <h2>הוספת מתכון</h2>
+   <div id=right>
+      <div><span>שם המתכון</span><input type="text" [(ngModel)]="newRecipe.RecipeName" name="RecipeName"></div>
+      <div> <span>זמן הכנה </span><input type="number" [(ngModel)]="newRecipe.PrepartionTime" name="PrepartionTime">
+      </div>
+      <div><span>רמה</span><input type="text" [(ngModel)]="newRecipe.Level" max="3" name="Level">
+      </div>
+      <div><span>קוד משתמש</span><input type="text" [(ngModel)]="newRecipe.UserCode" name="UserCode"></div>
+      <div><input type="file" name="Picture" [(ngModel)]="newRecipe.Picture" (change)="see()"></div>
+      <img
+       src="assets/{{newRecipe.Picture}}" alt="image" id="recipeEdited" />
+   </div>
+   <span>רכיבים</span>
+   <div *ngFor="let c of ing,let i=index; trackBy:funcindex"><input type="text" [(ngModel)]="ing[i]" name="{{ing[i]}}"
+         (blur)="updateIng()"></div>
+   <span>הוראות הכנה</span>
+   <div *ngFor="let r of pre,let j=index; trackBy:funcindex"><input type="text" [(ngModel)]="pre[j]" name="{{pre[j]}}"
+         (blur)="updatePre()"></div>
+   <div><input type="button" value="שמור שינויים" (click)="saveRecipe()"></div>
+</div>

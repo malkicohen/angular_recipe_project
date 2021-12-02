@@ -1,0 +1,57 @@
+<body>
+  <span>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Julius+Sans+One|Open+Sans:400,700,600'
+      rel='stylesheet' type='text/css'>
+    <title>{{myRecipe1.RecipeName}}</title>
+  </span>
+  <div class="contentWrapper">
+    <div>
+
+    </div>
+
+
+    <div class="row picStuff">
+      <div class="col-4">
+        <img src="../../assets/{{myRecipe1.Picture}}" />
+      </div>
+      <div class="col-8 dirIng">
+
+        <!--     <div class="orange ribbon"></div> -->
+        <div class="hole"></div>
+        <h1>{{myRecipe1.RecipeName}}</h1>
+        <div class="col-4 ingredients">
+          <h2>רכיבים</h2>
+          <ul>
+            <li *ngFor="let x of myRecipe1.StringList,let i=index">
+              {{myRecipe1.StringList[i]}}
+            </li>
+          </ul>
+          <div class="category">
+            <div *ngIf="ifBirthday()"><img src="../../assets/עוגת יום הולדת.jpg" width="20" height="20" /></div>
+            <div *ngIf="ifCookie()"><img src="../../assets/לוגו (1).jpg" width="20" height="20" /></div>
+            <div *ngIf="ifCakey()"><img src="../../assets/גלידות.jpg" width="20" height="20" /></div>‏
+          </div>
+          <div class="d-flex justify-content-around bg-secondary mb-3" class="level" *ngFor="let i of pic">
+            <img [src]=i id="level">
+          </div>
+        </div>
+        <div class="col-4 directions">
+          <h2>הוראות הכנה</h2>
+          <p *ngFor="let x of myRecipe1.Prepartion,let l=index">
+            {{myRecipe1.Prepartion[l]}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <div class="signature">
+      <p>Made with <i class="much-heart"></i> by <a href="https://codepen.io/AngelaVelasquez">sury&malki</a></p>
+    </div>
+
+
+  </div>
+</body>

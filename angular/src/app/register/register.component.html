@@ -1,0 +1,35 @@
+
+        <img id="picture" src= '../../assets/אוכל3.png'>
+        <body id="pict"  >
+<div class="login-box">
+  <h2>register</h2>
+  <form [formGroup]="myForm1" (ngSubmit)=isRegistered1()>
+    <div class="user-box">
+      <input type="text" formControlName="Name" name="name" required="">
+      <label>Username</label>
+      <div *ngIf="myForm1.controls.Name.touched&&myForm1.controls.Name.errors" id="req">*שם זהו שדה חובה</div>
+    </div>
+    <div class="user-box">
+      <input type="password" formControlName="Password" name="password" required="">
+      <label>Password</label>
+    </div>
+    <div class="user-box">
+      <input type="text" formControlName="Mail" name="mail" required="">
+
+      <label>e-mail</label>
+      <div *ngIf="myForm1.controls.Mail.touched&&myForm1.controls.Mail.errors" id="req">*מייל זה אינו חוקי</div>
+        <!-- *ngIf="myForm1.controls.Mail.touched&&my" -->
+    </div>
+    <div class="user-box">
+      <input type="text" formControlName="Address" name="address" >
+      <label>address</label>
+    </div>
+    <div  id="submit" (click)="isRegistered1()" >
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      log-in
+    </div>
+  </form>
+</div></body>
